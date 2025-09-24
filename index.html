@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motormen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <!-- Lokale Schrift statt Google Fonts -->
     <style>
+        @font-face {
+            font-family: 'RockSalt';
+            src: url('fonts/RockSalt-Regular.ttf') format('truetype');
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,64 +20,57 @@
             overflow-x: hidden;
         }
 
-        /* Header mit Fade-Effekt */
         header {  
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #111 20%, #111 80%, rgba(0, 0, 0, 0) 100%);
+            padding: 15px 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, rgba(0,0,0,0) 0%, #111 20%, #111 80%, rgba(0,0,0,0) 100%);
         }
 
         .logo {
-            height: 80px;
+            height: 60px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
+            margin: 5px 10px;
+            font-size: 16px;
             text-transform: uppercase;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #FFA500;
-            transform: scale(1.2);
-        }
-
-        .schriftzug {
-            margin-top: 50px;
-            font-family: 'Rock Salt', cursive;
-            font-weight: bold;
-            font-size: 6em;
-            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-            letter-spacing: 5px;
-            color: white;
-            text-transform: uppercase;
+            transform: scale(1.1);
         }
 
         main {
             text-align: center;
-            padding: 50px;
+            padding: 30px 15px;
             background-image: url('img/band1.png');
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-attachment: fixed;
-            transition: background-position 0.1s ease-out;
         }
 
-        /* Style für die eingerückten Texte mit Boxen */
         section {
             max-width: 800px;
-            margin: 40px auto;
-            background: rgba(128, 128, 128, 0.8);
+            margin: 20px auto;
+            background: rgba(128, 128, 128, 0.85);
             padding: 20px;
-            border-radius: 15px;
-            border: 2px solid black;
+            border-radius: 12px;
+            border: 1px solid black;
             text-align: left;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
         section h2 {
@@ -80,22 +78,20 @@
             color: #FFA500;
         }
 
-        /* Footer mit Fade-Effekt */
         footer {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #111 20%, #111 80%, rgba(0, 0, 0, 0) 100%);
+            background: #111;
             color: white;
             text-align: center;
-            padding: 30px;
-            margin-top: auto;
+            padding: 20px;
         }
 
         .social-links a {
-            margin: 0 15px;
+            margin: 0 10px;
             display: inline-block;
         }
 
         .social-links img {
-            height: 40px;
+            height: 35px;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
 
@@ -110,11 +106,34 @@
             text-decoration: none;
             font-size: 14px;
             margin-top: 10px;
-            margin-bottom: 20px;
         }
 
-        .social-links {
-            margin-top: 20px;
+        /* ✅ Responsive Anpassungen */
+        @media (max-width: 768px) {
+            .logo {
+                height: 50px;
+            }
+            .nav-links a {
+                font-size: 14px;
+                margin: 5px;
+            }
+            section {
+                margin: 15px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 40px;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .nav-links a {
+                margin: 8px 0;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -122,40 +141,41 @@
     <header>
         <img src="img/logo.png" alt="Band Logo" class="logo">
         <nav class="nav-links">
-            <a href="#about.html">About</a>
-            <a href="#media.html">Media</a>
-            <a href="#tour.html">Tour</a>
-            <a href="#merchandise.html">Merchandise</a>
+            <a href="about.html">About</a>
+            <a href="media.html">Media</a>
+            <a href="tour.html">Tour</a>
+            <a href="merchandise.html">Merch</a>
         </nav>
     </header>
     
     <main>
-		<p><img src="img/schriftzug.png"></p>
-		<section>
+        <img src="img/schriftzug.png" alt="Motormen Schriftzug" style="max-width: 100%; height: auto;">
+        
+        <section>
             <h2>Caput I - Initium</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut blanditiis praesentium voluptatum blanditiis praesentium blanditiis praesentium voluptatum deleniti atque corrupti voluptatum deleniti atque corrupti deleniti atque corrupti labore et dolore magna aliqua... blanditiis praesentium voluptatum deleniti atque corrupti</p>
+            <p>Hier kommt euer erster Textabschnitt hin …</p>
         </section>
 
         <section>
             <h2>Caput II - Progressus</h2>
-            <p>Nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum blanditiis blanditiis blanditiis praesentium voluptatum deleniti atque corrupti praesentium voluptatum deleniti atque corrupti praesentium voluptatum deleniti atque corrupti...blanditiis praesentium voluptatum deleniti atque corrupti</p>
+            <p>Hier kommt euer zweiter Textabschnitt hin …</p>
         </section>
 
         <section>
             <h2>Caput III - Finis</h2>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti blanditiis blanditiis blanditiis praesentium voluptatum deleniti atque corrupti praesentium voluptatum deleniti atque corrupti praesentium voluptatum deleniti atque corrupti...blanditiis praesentium voluptatum deleniti atque corrupti</p>
+            <p>Hier kommt euer dritter Textabschnitt hin …</p>
         </section>
     </main>
     
     <footer>
-        <a href="#impressum" class="impressum-link">Impressum</a>
+        <a href="impressum.html" class="impressum-link">Impressum & Datenschutz</a>
         <div class="social-links">
             <a href="https://facebook.com/motormenmakemusic/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
             <a href="https://youtube.com/@motormenband-ye9lo" target="_blank"><img src="img/youtube.png" alt="YouTube"></a>
             <a href="https://instagram.com/motormen/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
             <a href="https://bandcamp.com" target="_blank"><img src="img/bandcamp.png" alt="Bandcamp"></a>
         </div>
-        <p>All rights reserved by Motormen</p>
+        <p>© 2025 Motormen – All rights reserved</p>
     </footer>
 </body>
 </html>
