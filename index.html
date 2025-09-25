@@ -11,13 +11,21 @@
             src: url('fonts/RockSalt-Regular.ttf') format('truetype');
         }
 
-        body {
-            font-family: Arial, sans-serif;
+        /* Grundlayout: Body & HTML auf volle Höhe */
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            background-color: black;
+            font-family: Arial, sans-serif;
             color: white;
             overflow-x: hidden;
+
+            /* Hintergrundbild */
+            background: url('img/band2.png') no-repeat center center fixed;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
         }
 
         header {  
@@ -54,18 +62,15 @@
         }
 
         main {
+            flex: 1; /* Nimmt gesamte Höhe zwischen Header und Footer */
             text-align: center;
             padding: 30px 15px;
-            background-image: url('img/band1.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
         }
 
         section {
             max-width: 800px;
             margin: 20px auto;
-            background: rgba(128, 128, 128, 0.85);
+            background: rgba(17, 17, 17, 0.85);
             padding: 20px;
             border-radius: 12px;
             border: 1px solid black;
@@ -83,6 +88,7 @@
             color: white;
             text-align: center;
             padding: 20px;
+            margin-top: auto; /* Footer bleibt unten */
         }
 
         .social-links a {
